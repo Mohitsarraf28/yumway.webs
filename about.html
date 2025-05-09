@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - YUMWAY</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="Browserlogo-Photoroom (1).png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary-color: #e94822;
+      --secondary-color: #f2b705;
+      --text-color: #333;
+      --light-bg: #f9f5f0;
+      --dark-bg: #2c3e50;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.7;
+      color: var(--text-color);
+      background-color: #fff;
+    }
+    
+    /* Navbar styling to match index.html */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background-color: var(--light-bg);
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+      position: relative;
+    }
+    
+    .navbar-logo img {
+      height: 50px;
+    }
+    
+    .navbar-menu {
+      display: flex;
+      gap: 25px;
+    }
+    
+    .navbar-menu a {
+      text-decoration: none;
+      color: var(--text-color);
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    
+    .navbar-menu a:hover {
+      color: var(--primary-color);
+    }
+    
+    .navbar-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    
+    .navbar-toggle span {
+      width: 25px;
+      height: 3px;
+      background-color: var(--text-color);
+      margin: 3px 0;
+      transition: 0.3s;
+    }
+    
+    /* Hero section */
+    .hero {
+      height: 50vh;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('banner20.jpg');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+    }
+    
+    .hero-content {
+      max-width: 800px;
+      padding: 0 20px;
+    }
+    
+    .hero h1 {
+      font-size: 42px;
+      margin-bottom: 15px;
+      font-family: 'Playfair Display', serif;
+    }
+    
+    /* About section styling */
+    .about-section {
+      max-width: 1000px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+    
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      margin-bottom: 30px;
+      color: var(--primary-color);
+      text-align: center;
+      position: relative;
+      padding-bottom: 15px;
+    }
+    
+    .section-title:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background-color: var(--secondary-color);
+    }
+    
+    .about-text {
+      margin-bottom: 40px;
+    }
+    
+    .about-text p {
+      margin-bottom: 20px;
+      font-size: 17px;
+    }
+    
+    .highlight {
+      color: var(--primary-color);
+      font-weight: 600;
+    }
+    
+    /* Values section */
+    .values-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 50px;
+    }
+    
+    .value-card {
+      background-color: var(--light-bg);
+      padding: 30px;
+      border-radius: 10px;
+      text-align: center;
+      transition: transform 0.3s;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .value-card:hover {
+      transform: translateY(-10px);
+    }
+    
+    .value-icon {
+      font-size: 40px;
+      color: var(--primary-color);
+      margin-bottom: 20px;
+    }
+    
+    .value-title {
+      font-size: 20px;
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+    
+    /* CTA section to match index.html */
+    .cta-section {
+      text-align: center;
+      padding: 40px 20px;
+      background-color: #f9f9f9;
+      margin: 40px 0;
+    }
+    
+    .happiness-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      margin-bottom: 20px;
+      color: var(--primary-color);
+      font-weight: 700;
+    }
+    
+    .cta-button {
+      background-color: var(--primary-color);
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      font-weight: 500;
+    }
+    
+    .cta-button:hover {
+      background-color: #c73d1d;
+    }
+    
+    /* Footer styling */
+    footer {
+      background-color: var(--dark-bg);
+      color: white;
+      padding: 40px 0;
+      text-align: center;
+    }
+    
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    .footer-logo {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: var(--secondary-color);
+      font-family: 'Playfair Display', serif;
+    }
+    
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+    
+    .footer-links a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      transition: color 0.3s;
+    }
+    
+    .footer-links a:hover {
+      color: var(--secondary-color);
+    }
+    
+    .social-icons {
+      margin-bottom: 20px;
+    }
+    
+    .social-icons a {
+      color: white;
+      font-size: 20px;
+      margin: 0 10px;
+      transition: color 0.3s;
+    }
+    
+    .social-icons a:hover {
+      color: var(--secondary-color);
+    }
+    
+    .copyright {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.7);
+    }
+    
+    .tagline {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 22px;
+      color: var(--secondary-color);
+      margin-bottom: 30px;
+      text-align: center;
+    }
+    
+    /* Responsive design */
+    @media screen and (max-width: 768px) {
+      .navbar-menu {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: var(--light-bg);
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        z-index: 10;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+      }
+      
+      .navbar-menu.active {
+        display: flex;
+      }
+      
+      .navbar-toggle {
+        display: flex;
+      }
+      
+      .navbar-toggle.open span:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+      }
+      
+      .navbar-toggle.open span:nth-child(2) {
+        opacity: 0;
+      }
+      
+      .navbar-toggle.open span:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+      }
+      
+      .hero h1 {
+        font-size: 32px;
+      }
+      
+      .section-title {
+        font-size: 28px;
+      }
+      
+      .values-container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- NAVBAR to match index.html -->
+  <nav class="navbar">
+    <div class="navbar-logo">
+      <img src="output-onlinepngtools-removebg-preview.png" alt="Logo">
+    </div>
+    <div class="navbar-toggle" id="navbar-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="navbar-menu" id="navbar-menu">
+      <a href="index.html">
+        <img src="home.png" alt="Home Icon" style="width: 20px; vertical-align: middle; margin-right: 5px;">
+      </a>
+      <a href="#">Products</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Our Story Since 1805</h1>
+      <p>A legacy of goodness, a future full of flavor</p>
+    </div>
+  </section>
+
+  <section class="about-section">
+    <h2 class="section-title">YUMWAY — A Legacy of Goodness, A Future Full of Flavour</h2>
+    
+    <div class="tagline">Happiness, one bite at a time.</div>
+    
+    <div class="about-text">
+      <p>YUMWAY is born from a remarkable <span class="highlight">220-year legacy</span> in natural food manufacturing — a journey that began in 1805 with a passion for crafting wholesome, honest food. What started with traditional Sharbats, Ayurvedic recipes, and lovingly preserved ingredients has today evolved into a globally trusted natural food manufacturing company, rooted in heritage but made for modern lives. We've grown alongside generations, blending wisdom with innovation to bring joy to every table, across every corner of the world.</p>
+      
+      <p>As the world moves fast, YUMWAY keeps food real. We bring you new-age frozen snacks and ready-to-cook favourites that are <span class="highlight">completely preservative-free</span>, naturally textured, crisp, and absolutely delicious. Every product is designed for ease — quick to cook, hard to forget, and made with integrity. Whether it's a golden hash brown on a Monday morning, fries for a late-night craving, or a quick bite between meetings — YUMWAY is your everyday companion for simple, happy meals.</p>
+      
+      <p>Our recipes are rooted in rich legacy of nourishment and care, but made for global palates and international standards. Today, YUMWAY is proudly reaching homes, cafés, and quick-service restaurants in many countries around the world — not just as a frozen food brand, but as a <span class="highlight">symbol of trust, taste, and time-honoured quality</span>.</p>
+      
+      <p>Because for us, food has always been more than a product. It's a feeling. A moment of laughter. A plate shared. A memory made. At YUMWAY, every bite is thoughtfully crafted to bring people together, spark smiles, and make everyday moments a little more delicious. That's the Yum Way — Happiness, one bite at a time.</p>
+    </div>
+    
+    <div class="values-container">
+      <div class="value-card">
+        <div class="value-icon">
+          <i class="fas fa-history"></i>
+        </div>
+        <h3 class="value-title">Heritage</h3>
+        <p>220 years of culinary tradition, blending ancient wisdom with modern innovation.</p>
+      </div>
+      
+      <div class="value-card">
+        <div class="value-icon">
+          <i class="fas fa-leaf"></i>
+        </div>
+        <h3 class="value-title">Natural Goodness</h3>
+        <p>Preservative-free products that maintain authentic flavors and textures.</p>
+      </div>
+      
+      <div class="value-card">
+        <div class="value-icon">
+          <i class="fas fa-heart"></i>
+        </div>
+        <h3 class="value-title">Connection</h3>
+        <p>Creating moments that bring people together through the joy of good food.</p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- CTA section matching index.html -->
+  <section class="cta-section">
+    <h1 class="happiness-title">BE OUR HAPPINESS PARTNER</h1>
+    <a href="contact.html">
+      <button class="cta-button">CLICK HERE</button>
+    </a>
+  </section>
+  
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logo">YUMWAY</div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="products.html">Products</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+      <div class="copyright">
+        &copy; 2025 YUMWAY. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Toggle navbar menu for mobile
+    document.getElementById('navbar-toggle').addEventListener('click', function () {
+      this.classList.toggle('open');
+      document.getElementById('navbar-menu').classList.toggle('active');
+    });
+  </script>
+</body>
+</html>
